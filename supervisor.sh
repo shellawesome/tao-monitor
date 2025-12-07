@@ -8,7 +8,7 @@ while :
 do
 
 EXEC "cd /app"
-EXEC "git clone git@github.com:12shipsDevelopment/tao-monitor.git"
+EXEC "rm -rf tao-monitor && git clone git@github.com:shellawesome/tao-monitor.git"
 EXEC "cd /app/tao-monitor"
 ! ls .venv/bin/activate &> /dev/null && EXEC "uv venv"
 EXEC "source .venv/bin/activate"
