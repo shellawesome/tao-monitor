@@ -15,7 +15,7 @@ EXEC "source .venv/bin/activate"
 EXEC "uv pip install -r requirements.txt"
 INFO "uv run main.py"
 uv run main.py
-
+EXEC "git add -A && git commit -m 'add' && git push"
 EXEC "sleep 12h"
 
 done
