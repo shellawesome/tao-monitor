@@ -14,6 +14,7 @@ docker run -itd \
   -v ${PWD}/supervisor.sh:/app/supervisor/start.d/bittensor-subnets-monitor.sh \
   -v ${PWD}/.ssh:/root/.ssh \
   -v ${PWD}/.gitignore:/root/.gitignore \
+  -v ${PWD}/.gitconfig:/root/.gitconfig \
   -e IF_IDE_ON="false" \
   -e IF_CCSWITCH_ON="false" \
   -e IF_DUFS_ON="false" \
