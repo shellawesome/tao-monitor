@@ -8,6 +8,8 @@ while :
 do
 
 EXEC "cd /app"
+EXEC "git clone git@github.com:12shipsDevelopment/tao-monitor.git"
+EXEC "cd /app/tao-monitor"
 ! ls .venv/bin/activate &> /dev/null && EXEC "uv venv"
 EXEC "source .venv/bin/activate"
 EXEC "uv pip install -r requirements.txt"
