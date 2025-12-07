@@ -48,7 +48,7 @@ def main():
                 driver.get(f"https://taomarketcap.com/subnets/{subnetUid}/miners")
                 time.sleep(10)
                 logger.info(f"save screen")
-                driver.save_screenshot(f"/app/data/sn{subnetUid}-miner.png")
+                driver.save_screenshot(f"/app/tao-monitor/data/sn{subnetUid}-miner.png")
                 break
             except Exception as e:
                 print(e)
@@ -70,7 +70,7 @@ def main():
                 driver.get(f"https://taomarketcap.com/subnets/{subnetUid}/registration")
                 time.sleep(10)
                 logger.info(f"save screen")
-                driver.save_screenshot(f"/app/data/sn{subnetUid}-registration.png")
+                driver.save_screenshot(f"/app/tao-monitor/data/sn{subnetUid}-registration.png")
                 break
             except Exception as e:
                 print(e)
