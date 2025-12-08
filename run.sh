@@ -34,7 +34,11 @@ docker ps
 
 sleep 10
 
-docker logs ${name}
+docker ps
+docker logs --tail 30 ${name}
+
+cat /etc/os-release
+sleep 10
 
 docker exec -i ${name} "pwd; ls -alht; ls /app/ && bash /app/start.sh"
 
