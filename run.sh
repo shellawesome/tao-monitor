@@ -17,6 +17,8 @@ docker run -itd \
   -e IF_GOLANG_ON="false" \
   -e IF_NODEJS_ON="false" \
   -e IF_JUPYTER_ON="false" \
+  -e IF_NPS_ON="false" \
+  -e IF_NPC_ON="false" \
   -e IF_YPROMPT_ON="false" \
   -e IF_TERMINAL_ON="true" \
   -e TERMINAL_USER="root" \
