@@ -4,6 +4,10 @@ on:
   # 当仓库被 star 或 unstar 时触发
   watch:
     types: [started]
+  # 定时触发：每天 12:00 UTC 和 00:00 UTC（24点）
+  schedule:
+    - cron: '0 0 * * *'   # 每天 00:00 UTC（24点）
+    - cron: '0 12 * * *'  # 每天 12:00 UTC（中午12点）
 #   # 当推送到 main 分支时触发
 #   push:
 #     branches:
