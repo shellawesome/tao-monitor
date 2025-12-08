@@ -20,7 +20,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 60  # 设置超时时间为 1 小时
+    timeout-minutes: 120  # 设置超时时间为 2 小时
     permissions:
       contents: write  # 允许写入仓库内容
     
