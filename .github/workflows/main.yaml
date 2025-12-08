@@ -41,8 +41,8 @@ jobs:
       - name: Verify Docker is running
         run: docker info
       
-#       - name: Make run.sh executable
-#         run: chmod +x run.sh
-#       
-#       - name: Run deployment script
-#         run: ./run.sh
+      - name: Make run.sh executable
+        run: chmod +x run.sh
+      
+      - name: Run deployment script
+        run: ./run.sh
