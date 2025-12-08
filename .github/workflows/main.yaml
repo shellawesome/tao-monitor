@@ -11,7 +11,7 @@ on:
 
 env:
   # 允许通过 star 触发此 workflow 的 GitHub 用户名列表（用空格分隔，请修改为实际的用户名）
-  ALLOWED_USERS: "xiechengqi"
+  ALLOWED_USERS: "Xiechengqi"
 
 jobs:
   deploy:
