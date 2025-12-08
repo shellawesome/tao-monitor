@@ -24,13 +24,15 @@ docker run -itd \
   -e LANG=C.UTF-8 \
   -e CHROMIUM_CLEAN_SINGLETONLOCK=true \
   -e CHROMIUM_START_URLS="chrome://version" \
-  -v ${PWD}/start.sh:/app/tao-monitor/start.sh \
-  -v ${PWD}/main.py:/app/tao-monitor/main.py \
-  -v ${PWD}/requirements.txt:/app/tao-monitor/requirements.txt \
-  -v ${PWD}/data:/app/tao-monitor/data \
+  -v ${PWD}/start.sh:/app/start.sh \
+  -v ${PWD}/main.py:/app/main.py \
+  -v ${PWD}/requirements.txt:/app/requirements.txt \
+  -v ${PWD}/data:/app/data \
   --name ${name} fullnode/remote-chromium-ubuntu:latest
 
-docker exec -i ${name} "bash /app/tao-monitor/start.sh"
+docker ps
+
+docker exec -i ${name} "ls /app/ && bash /app/start.sh"
 
 #   --privileged \
 #   -p 2222:2222 \
