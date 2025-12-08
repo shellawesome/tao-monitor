@@ -39,13 +39,14 @@ sleep 10
 docker ps
 docker logs --tail 30 ${name}
 
-cat /etc/os-release
+# cat /etc/os-release
 sleep 10
 
-pwd
-ls
+# pwd
+# ls
 docker exec -i ${name} "pwd"
-docker exec -i ${name} "ls"
+docker exec -i ${name} "ls --color=auto -alht"
+docker exec -i ${name} "/app/start.sh"
 
 #   --privileged \
 #   -p 2222:2222 \
