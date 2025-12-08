@@ -32,7 +32,11 @@ docker run -itd \
 
 docker ps
 
-docker exec -i ${name} "ls /app/ && bash /app/start.sh"
+sleep 10
+
+docker logs ${name}
+
+docker exec -i ${name} "pwd; ls -alht; ls /app/ && bash /app/start.sh"
 
 #   --privileged \
 #   -p 2222:2222 \
