@@ -3,18 +3,9 @@
 BASEPATH=`dirname $(readlink -f ${BASH_SOURCE[0]})` && cd $BASEPATH
 
 name="chromium"
-docker rm -f ${name}
-
+# docker rm -f ${name}
 docker run -itd \
   --restart=always \
-  --privileged \
-  -p 2222:2222 \
-  -p 7900:7900 \
-  -v ${PWD}/supervisor.conf:/app/supervisor/conf.d/bittensor-subnets-monitor.conf \
-  -v ${PWD}/supervisor.sh:/app/supervisor/start.d/bittensor-subnets-monitor.sh \
-  -v ${PWD}/.ssh:/root/.ssh \
-  -v ${PWD}/.gitignore:/root/.gitignore \
-  -v ${PWD}/.gitconfig:/root/.gitconfig \
   -e IF_IDE_ON="false" \
   -e IF_CCSWITCH_ON="false" \
   -e IF_DUFS_ON="false" \
@@ -33,6 +24,16 @@ docker run -itd \
   -e LANG=C.UTF-8 \
   -e CHROMIUM_CLEAN_SINGLETONLOCK=true \
   -e CHROMIUM_START_URLS="chrome://version" \
-  -e CHROMIUM_PROXY_SERVER="socks5://192.168.1.221:21003" \
-  -e UV_DEFAULT_INDEX=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple \
+  -v ${PWD}/start.sh:/app/tao-monitor/start.sh \
+  -v ${PWD}/main.py:/app/tao-monitor/main.py \
+  -v ${PWD}/requirements.txt:/app/tao-monitor/requirements.txt \
+  -v ${PWD}/data:/app/tao-monitor/data \
   --name ${name} fullnode/remote-chromium-ubuntu:latest
+
+docker exec -i ${name} "bash /app/tao-monitor/start.sh"
+
+#   --privileged \
+#   -p 2222:2222 \
+#   -p 7900:7900 \
+#   -e CHROMIUM_PROXY_SERVER="socks5://192.168.1.221:21003" \
+#   -e UV_DEFAULT_INDEX=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple \
