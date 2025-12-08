@@ -40,7 +40,10 @@ docker logs --tail 30 ${name}
 cat /etc/os-release
 sleep 10
 
-docker exec -i ${name} "pwd; ls -alht; ls /app/ && bash /app/start.sh"
+pwd
+ls
+docker exec -i ${name} "pwd"
+docker exec -i ${name} "ls"
 
 #   --privileged \
 #   -p 2222:2222 \
